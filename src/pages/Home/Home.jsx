@@ -70,7 +70,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.fundoCinza}>
-      <p>Bem vindo,</p>
+      <p className={styles.p}> Bem vindo,</p>
       <p className={styles.userName}>{user ? user.displayName : <Link to="/login">Fazer login</Link>}</p>
       <div className={styles.AgendamentoContainer}>
         <QuadraSelector quadras={quadras} onQuadraSelected={handleQuadraSelected} />

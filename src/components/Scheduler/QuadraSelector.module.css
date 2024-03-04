@@ -3,6 +3,7 @@
 .quadraSelector {
   display: flex;
   justify-content: center; /* Centraliza o quadraContainer */
+  margin-top: -20px;
 }
 
 .quadraContainer {
