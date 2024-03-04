@@ -10,7 +10,7 @@ import QuadraSelector from "../../components/Scheduler/QuadraSelector";
 import AgendamentoCard from "../../components/Scheduler/AgendamentoCard";
 import DiaSelector from "../../components/Scheduler/DiaSelector";
 import HorarioSelector from "../../components/Scheduler/HorarioSelector";
-import { BsCheckLg, BsChevronRight } from "react-icons/bs";
+import { BsCheckLg, BsChevronRight, BsCartPlus } from "react-icons/bs";
 
 const Home = () => {
   const [selectedQuadra, setSelectedQuadra] = useState(null);
@@ -83,6 +83,20 @@ const Home = () => {
             <button onClick={handleAgendar} className={styles.confirmarAgendamento}><BsCheckLg size='1.5em'/></button>
             )}
             <h3 className={styles.h3}>Itens selecionados</h3>
+
+            {agendamentos.length === 0 ? (
+              <div className={styles.emptyMessage}>
+                <p>Nenhum item selecionado!</p>
+                <BsCartPlus size="3em" /> {/* Ajuste o tamanho conforme necessário */}
+              </div>
+            ) : (
+              <>
+                <div className={styles.agendamentosContainer}>
+                  {/* Renderização dos agendamentos */}
+                </div>
+                {/* Restante do conteúdo */}
+              </>
+            )}
            
             {agendamentos.length > 0 && (
               <>

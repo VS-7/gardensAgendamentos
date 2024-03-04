@@ -56,7 +56,7 @@
     left: 50%; /* Centraliza o botão horizontalmente */
     width: 100%;
     transform: translateX(-50%); /* Ajusta a centralização */
-    padding: 22px 20px; /* Espaçamento interno */
+    padding: 25px 20px; /* Espaçamento interno */
     border: none; /* Sem borda */
     background: var(--color-rgb);   
     color: white; /* Cor do texto */
@@ -76,7 +76,7 @@
   
   /* Ícone dentro do botão */
   .buttonPayment svg {
-    margin-left: 60px; /* Espaçamento do ícone para o texto */
+    margin-left: 70px; /* Espaçamento do ícone para o texto */
     font-size: 1.5em;
   }
 .confirmarAgendamento {
@@ -96,5 +96,16 @@
     background-color: var(--color-btn); /* Mude para a cor de sucesso ao passar o mouse */
   }
   
+
+  .emptyMessage {
+    text-align: center;
+    font-size: 1.5em; /* Ajuste o tamanho do texto conforme necessário */
+    color: var(--color--2); /* Escolha uma cor do seu tema */
+    margin: 20px 0; /* Ajuste o espaçamento conforme necessário */
+  }
+  
+  .emptyMessage p {
+    margin-bottom: 10px; /* Espaço entre o texto e o ícone */
+  }
 
 

@@ -22,19 +22,25 @@
 }
 
 .icon {
-    font-size: 20px; /* Tamanho dos ícones */
-    color: var(--color--3);
+    font-size: 2em; /* Tamanho dos ícones */
+    color: var(--color--2);
 }
 
 .active {
     color: var(--color--2);
     background-color: var(--color--5);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
+
+}
+
+.active svg {
+    color: var(--color--1);
+    font-size: 2em;
 }
 
 .activePlus {
-    color: var(--color--2);
+    color: var(--color--5);
     border-radius: 10px;
 }
 
@@ -68,6 +74,19 @@
     text-decoration: none;
 }
 
+.profilePhoto {
+    display: flex;
+    border-radius: 50%;
+
+    width: 2em;
+}
+
+.activeProfile {
+    border: 5px solid var(--color--5);
+    border-radius: 50%;
+    
+}
+
 @media (max-width: 768px) {
     .navbar {
         display: flex;
@@ -77,7 +96,8 @@
         bottom: 0;
         left: 0;
         right: 0; /* Garante que a navbar esteja centralizada horizontalmente */
-        width: 80%; /* Define a largura da navbar */
+        width: 60%; /* Define a largura da navbar */
+        min-height: 60px;
         margin: 0 auto; /* Centraliza a navbar horizontalmente */
         margin-bottom: 15px;
         box-shadow: 0 -2px 20px #e0e0e0;

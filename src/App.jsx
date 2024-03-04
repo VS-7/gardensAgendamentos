@@ -64,10 +64,11 @@ function App() {
   if(loadingUser)
   return (
     <div className="loading-container">
-
-      <p className="loading-text">Carregando...</p>
-    </div>
+    <div className="loader"></div>
+    <p className="loading-text">Carregando...</p>
+  </div>
   );
+
 
   return (
     <div className='App'>

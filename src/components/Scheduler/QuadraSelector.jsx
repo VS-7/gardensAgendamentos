@@ -9,6 +9,8 @@ const QuadraSelector = ({ onQuadraSelected }) => {
   // Supondo que `useFetchDocuments` seja um hook para buscar documentos no Firebase
   const { documents: fetchedQuadras, loading, error } = useFetchDocuments('courts');
 
+  const [selectedQuadraId, setSelectedQuadraId] = useState(null);
+
   useEffect(() => {
     if (fetchedQuadras) {
       setQuadras(fetchedQuadras);
@@ -16,6 +18,7 @@ const QuadraSelector = ({ onQuadraSelected }) => {
   }, [fetchedQuadras]);
 
   const handleScheduleClick = (quadra) => {
+    setSelectedQuadraId(quadra.id); // Atualiza o estado com o id da quadra selecionada
     onQuadraSelected(quadra); // Passando a quadra selecionada para o componente pai
   };
 
@@ -26,14 +29,22 @@ const QuadraSelector = ({ onQuadraSelected }) => {
     <div className={styles.quadraSelector}>
       <div className={styles.quadraContainer}>
       {quadras.map((quadra) => (
-        <div key={quadra.id} className={styles.card}>
-          <img src={quadra.image} alt={quadra.name} className={styles.cardImage} />
-          <div className={styles.cardContent}>
-            <h3>{quadra.name}</h3>
-            <button className={styles.btnAgenda} onClick={() => handleScheduleClick(quadra)}>Agendar <BsCheck2 /></button>
+          <div
+            key={quadra.id}
+            className={`${styles.card} ${selectedQuadraId === quadra.id ? styles.selectedCard : ''}`}
+          >
+            <img src={quadra.image} alt={quadra.name} className={styles.cardImage} />
+            <div className={styles.cardContent}>
+              <h3>{quadra.name}</h3>
+              <button
+                className={`${styles.btnAgenda} ${selectedQuadraId === quadra.id ? styles.selectedBtn : ''}`}
+                onClick={() => handleScheduleClick(quadra)}
+              >
+                Agendar <BsCheck2 />
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
       </div>
     </div>
   );

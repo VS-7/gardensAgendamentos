@@ -40,11 +40,15 @@ const Navbar = () => {
                                     <IoAddCircle className={styles.icon} size='1.5em'/>
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.active : "")}>
+                            <NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.activeProfile : "")}>
+                                {/* Se o usuário estiver logado e tiver uma foto, mostra a foto */}
+                                {user.photoURL ? (
+                                    <img src={user.photoURL} alt="Perfil" className={styles.profilePhoto} />
+                                ) : (
+                                    // Se não houver foto, mostra o ícone padrão
                                     <BsPersonFill className={styles.icon}/>
-                                </NavLink>
-                            </li>
+                                )}
+                            </NavLink>
                         </>
                     )}
                 </ul>
