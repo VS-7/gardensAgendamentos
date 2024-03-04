@@ -1,34 +1,39 @@
-
-/* Estilos individuais para cada cartão */
-.agendamentoRow {
-  display: flex;
-  justify-content: center;
-}
-
 .agendamentoCard {
   display: flex;
-  align-items: center; /* Alinha os itens verticalmente no centro */
-  gap: 10px; /* Espaço entre a imagem e os detalhes do cartão */
+  justify-content: center;
+  align-items: center;
+  min-width: 221px;
+  height: 98px;
+  border: none;
+  box-shadow: 0 5px 10px #c9c9c9;
+  border-radius: 8px;
   padding: 5px;
-  margin-left: 10px;
-  box-shadow: 0 2px 8px var(--color--2);
-  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos touch */
-  border-radius: 15px;
-  background: var(--color--1);
-  overflow: hidden; /* Garante que nada saia do contorno arredondado */
-  font-size: smaller;
+  margin: 10px 0 15px 20px;
 }
 
 .cardImage {
-  width: 120px;
-  height: 100px;
+  width: 110px;
+  height: 87px;
   object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-  border-radius: 15px; /* Arredonda apenas o canto superior esquerdo *//* Arredonda apenas o canto inferior esquerdo */
+  border-radius: 5px; /* Arredonda apenas o canto superior esquerdo *//* Arredonda apenas o canto inferior esquerdo */
+}
+
+.cardDetails {
+
 }
 
 
-.cardDetails h2, .cardDetails p {
-  margin: 2px 0;
+.cardDetails h2 {
+  margin: 3px;
+  margin-left: 2px;
+  color: var(--color--4);
+  font-size: 1em;
+}
+
+.cardDetails p {
+  margin: -3px;
+  margin-left: 5px;
+  font-size: 0.7em;
   color: var(--color--4);
 }
 

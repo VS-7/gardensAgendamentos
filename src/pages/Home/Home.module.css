@@ -1,32 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .fundoCinza {
     position: relative; /* Ajuste se necessário, dependendo do layout */
     width: 100%;
-    height: 200px;
+    height: 163px;
     background-color: var(--color--3);
-    margin-top: -12vh;
+    margin-top: -11vh;
     z-index: -1; /* Ajuste se necessário */
 }
 
 /* Estilos para elementos dentro de .home para assegurar que eles tenham um z-index maior que o fundo */
 .home > * {
     position: relative;
-    z-index: 20; /* Garante que esses elementos fiquem acima do fundo cinza */
+    z-index: 5; /* Garante que esses elementos fiquem acima do fundo cinza */
 }
 
 .home {
     height: 105vh;
 }
 
+.userName {
+  display: flex;
+  color: var(--color--1);
+}
+
 
 /* Correção para a tag h3 */
 .h3 {
+  padding: 0 0 0 10px;
     color: var(--color--3);
+    font-size: large;
     font-weight: initial;
     margin-left: 10px;
 }
 
 .AgendamentoContainer {
     margin-top: 50px;
+}
+
+.agendamentosContainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
 }
 
 .buttonPayment {
@@ -40,7 +55,9 @@
     background: var(--color-rgb);   
     color: white; /* Cor do texto */
     border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior */
-    font-size: 1.5em; /* Tamanho do texto */
+    font-size: 1.3em; /* Tamanho do texto */
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
     box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.25); /* Sombra para dar destaque */
     z-index: 1000; /* Índice z para garantir que fique acima dos outros elementos */
     display: flex;
@@ -53,8 +70,8 @@
   
   /* Ícone dentro do botão */
   .buttonPayment svg {
-    margin-left: 100px; /* Espaçamento do ícone para o texto */
-    font-size: 1.2em;
+    margin-left: 60px; /* Espaçamento do ícone para o texto */
+    font-size: 1.5em;
   }
 .confirmarAgendamento {
     position: fixed; /* Fixa o botão na tela */

@@ -4,17 +4,17 @@ import {
     signOut,
     GoogleAuthProvider,
     signInWithPopup,
-} from 'firebase/auth'
+} from 'firebase/auth';
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 export const useAuthentication = () => {
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [cancelled, setCancelled] = useState(false);
+    const [user, setUser] = useState(null); // Adicione um estado para o usuário
 
-    const [cancelled, setCancelled] = useState(false)
-
-    const auth = getAuth()
+    const auth = getAuth();
 
     function checkIfIsCancelled() {
         if (cancelled) {
@@ -31,9 +31,15 @@ export const useAuthentication = () => {
         try {
             setLoading(true);
             const provider = new GoogleAuthProvider();
-            const result = await signInWithPopup(auth, provider); // Utiliza signInWithPopup para autenticação com Google
-            const user = result.user;
-            return user;
+            const result = await signInWithPopup(auth, provider);
+            // Define o usuário no estado
+            const profile = result.user;
+            setUser({
+              displayName: profile.displayName,
+              email: profile.email,
+              photoURL: profile.photoURL // Aqui você obtém a URL da foto do perfil
+            });
+            return profile;
         } catch (error) {
             console.error(error.message);
 
@@ -55,6 +61,7 @@ export const useAuthentication = () => {
         try {
             setLoading(true);
             await signOut(auth);
+            setUser(null); // Limpa o usuário do estado
         } catch (error) {
             console.error(error);
             setError("Falha ao tentar sair.");
@@ -73,5 +80,6 @@ export const useAuthentication = () => {
         logout,
         error,
         loading,
+        user // Retorne o usuário como parte do hook
     };
 };

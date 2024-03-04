@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useAuthValue } from "../../../context/AuthContext"; 
 
 // Componentes que você criou
 import QuadraSelector from "../../components/Scheduler/QuadraSelector";
@@ -16,6 +18,7 @@ const Home = () => {
   const [selectedHorario, setSelectedHorario] = useState("");
   const [agendamentos, setAgendamentos] = useState([]);
   const [total, setTotal] = useState(0); // Estado para armazenar o total
+  const { user } = useAuthValue();
 
   const navigate = useNavigate();
   const { documents: quadras, loading: loadingQuadras, error } = useFetchDocuments("courts");
@@ -67,7 +70,8 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.fundoCinza}>
-      <p>Bem vindo</p>
+      <p>Bem vindo,</p>
+      <p className={styles.userName}>{user ? user.displayName : <Link to="/login">Fazer login</Link>}</p>
       <div className={styles.AgendamentoContainer}>
         <QuadraSelector quadras={quadras} onQuadraSelected={handleQuadraSelected} />
           <>
@@ -79,9 +83,10 @@ const Home = () => {
             <button onClick={handleAgendar} className={styles.confirmarAgendamento}><BsCheckLg size='1.5em'/></button>
             )}
             <h3 className={styles.h3}>Itens selecionados</h3>
+           
             {agendamentos.length > 0 && (
               <>
-                
+                <div className={styles.agendamentosContainer}>
                 {agendamentos.map((agendamento, index) => (
                   <AgendamentoCard
                     key={index}
@@ -92,6 +97,7 @@ const Home = () => {
                     onExcluirAgendamento={() => handleExcluirAgendamento(index)}
                   />
                 ))}
+                </div>
                 <div className={styles.totalContainer}>
                   <h3 className={styles.h3}>Total a pagar: R$ {total.toFixed(2)}</h3>
                   <button onClick={handleIrParaPagamento} className={styles.buttonPayment}>Finalizar agendamento <BsChevronRight /></button>

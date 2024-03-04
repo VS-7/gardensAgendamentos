@@ -40,7 +40,7 @@ const HorarioSelector = ({ selectedDay, onHorarioSelected }) => {
       selectedDay.getFullYear() === today.getFullYear());
 
     // Supondo que você queira horários das 7:00 às 18:00 com intervalos de 60 minutos
-    const generatedTimeSlots = generateTimeSlots(7, 18, 60, isToday);
+    const generatedTimeSlots = generateTimeSlots(7, 20, 60, isToday);
     setHorariosDisponiveis(generatedTimeSlots);
   }, [selectedDay]);
 

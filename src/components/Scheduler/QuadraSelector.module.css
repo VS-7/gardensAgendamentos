@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .quadraSelector {
   display: flex;
   justify-content: center; /* Centraliza o quadraContainer */
@@ -8,7 +10,7 @@
   gap: 10px;
   overflow-x: auto; /* Habilita a rolagem horizontal */
   -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos touch */
-  padding: 10px;
+  padding: 0 0 0 20px;
   padding-bottom: 20px; /* Adiciona um padding para compensar a altura da scrollbar */
   margin-bottom: -20px; /* Corrige o espaço extra causado pelo padding-bottom */
   width: 100%; /* Faz com que ocupe a largura total do seu contêiner */
@@ -18,8 +20,8 @@
     display: flex;
     flex-direction: column;
     flex: 0 0 auto; /* Evita que os cards se ajustem e mantém o tamanho definido */
-    width: 230px;/* Largura fixa para cada card */
-    height: 270px;
+    width: 194px;/* Largura fixa para cada card */
+    height: 204px;
     box-shadow: 0 5px 10px var(--color--2);
     border-radius: 20px; /* Bordas arredondadas */
     background: var(--color--1);
@@ -28,33 +30,43 @@
   }
   
   .cardImage {
+    width: 173px;
+    height: 117px;
     padding: 10px;
     border-radius: 25px;
-    height: 160px;
   }
-  
+
   .cardContent {
-    margin-top: -28px;
-    padding: 10px;
-    justify-content: space-between;
-    font-weight: lighter;
+    padding: 0 0 0 10px;
+    margin-top: -25px;
+    
+  }
+
+  .cardContent h3{
+    margin-bottom: 0px;
+    font-weight: normal;
+    font-size: large;
   }
 
   .btnAgenda {
-    width: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border: none;
+    margin-top: 4px;
+    margin-left: 65px;
+    padding: 7px 15px;
     border-radius: 20px;
+    border: none;
+    font-size: small;
     background-color: var(--color--4);
     color: var(--color--1);
-    font-weight: 500;
-    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
   }
 
-  .btnAgenda:focus {
-    background-color: var(--color--5);
+  .btnAgenda svg {
+    font-size: 1.4em;
+    margin-left: 5px;
   }
+
+  
+  
   
