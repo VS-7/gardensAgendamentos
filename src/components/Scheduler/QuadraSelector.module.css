@@ -1,0 +1,60 @@
+.quadraSelector {
+  display: flex;
+  justify-content: center; /* Centraliza o quadraContainer */
+}
+
+.quadraContainer {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Habilita a rolagem horizontal */
+  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos touch */
+  padding: 10px;
+  padding-bottom: 20px; /* Adiciona um padding para compensar a altura da scrollbar */
+  margin-bottom: -20px; /* Corrige o espaço extra causado pelo padding-bottom */
+  width: 100%; /* Faz com que ocupe a largura total do seu contêiner */
+}
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto; /* Evita que os cards se ajustem e mantém o tamanho definido */
+    width: 230px;/* Largura fixa para cada card */
+    height: 270px;
+    box-shadow: 0 5px 10px var(--color--2);
+    border-radius: 20px; /* Bordas arredondadas */
+    background: var(--color--1);
+    overflow: hidden;
+    color: var(--color--3);
+  }
+  
+  .cardImage {
+    padding: 10px;
+    border-radius: 25px;
+    height: 160px;
+  }
+  
+  .cardContent {
+    margin-top: -28px;
+    padding: 10px;
+    justify-content: space-between;
+    font-weight: lighter;
+  }
+
+  .btnAgenda {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color--4);
+    color: var(--color--1);
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .btnAgenda:focus {
+    background-color: var(--color--5);
+  }
+  

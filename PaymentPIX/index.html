@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QrCode Pix Pagseguro</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Substitua 'SUA_URL_PARA_O_BACKEND' pela URL que retorna a URL do QR Code
+            axios.get('SUA_URL_PARA_O_BACKEND')
+                .then((response) => {
+                    if (response.data && response.data.qrCodeUrl) {
+                        const img = document.createElement('img');
+                        img.src = response.data.qrCodeUrl;
+                        img.alt = 'QR Code PIX';
+                        document.body.appendChild(img);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Erro ao obter a URL do QR Code:', error);
+                });
+        });
+    </script>
+</head>
+<body>
+    <!-- O QR Code será adicionado aqui pelo JavaScript -->
+</body>
+</html>

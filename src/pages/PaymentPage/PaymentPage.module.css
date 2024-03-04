@@ -1,0 +1,84 @@
+  .agendamentosContainer {
+    
+  }
+
+  .confirmarPagamento {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 0; /* Coloca no fundo da página */
+    left: 50%; /* Centraliza o botão horizontalmente */
+    width: 100%;
+    transform: translateX(-50%); /* Ajusta a centralização */
+    padding: 20px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    background: var(--color-rgb);   
+    color: white; /* Cor do texto */
+    font-size: 1.3em; /* Tamanho do texto */
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.25); /* Sombra para dar destaque */
+    z-index: 1000; /* Índice z para garantir que fique acima dos outros elementos */
+    display: flex;
+    justify-content: center;
+  }
+
+  .adicionarPayment {
+    position: fixed; /* Fixa o botão na tela */
+    top: 0;
+    left: 50%; /* Centraliza o botão horizontalmente */
+    width: 100%;
+    transform: translateX(-50%); /* Ajusta a centralização */
+    padding: 22px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 0 0 20px 20px ; /* Bordas arredondadas na parte superior */
+    background: var(--color-rgb);   
+    color: white; /* Cor do texto */
+    font-size: 1.5em; /* Tamanho do texto */
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.25); /* Sombra para dar destaque */
+    display: flex;
+    justify-content: end;
+  }
+  
+  .agendamentoCard {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Adicione mais estilos aqui */
+  }
+  
+  .agendamentoInfo {
+    margin-left: 20px;
+    /* Adicione mais estilos aqui */
+  }
+  
+  .metodoPagamento {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid var(--color-3);
+   padding: 20px 100px;
+   background-color: var(--color-1);
+  }
+  
+  .cupomContainer {
+    margin-top: 20px;
+    /* Adicione mais estilos aqui */
+  }
+  
+  .selecionarCupom {
+    /* Estilos para o botão de selecionar cupom */
+  }
+  
+  .totalContainer {
+    margin-top: 20px;
+    /* Adicione mais estilos aqui */
+  }
+
+  
+  .total {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid var(--color-3);
+    display: flex;
+    justify-content: center;
+    /* Adicione mais estilos aqui */
+  }
+  

@@ -1,0 +1,37 @@
+.horarioSelector {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 250px; /* Ajuste conforme necessário para limitar a altura */
+  overflow-y: hidden;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  align-content: flex-start;
+}
+
+.horarioCard {
+  flex: 0 0 auto;
+  min-width: 90px; /* Ajuste a largura mínima de cada horário */
+  height: 30px; /* Ajuste a altura de cada horário */
+  background-color: var(--color--1);
+  border: 1px solid var(--color--2);
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.horarioCard:hover,
+.selected {
+  background-color: var(--color--5);
+  border: 1px solid var(--color--5);
+  transform: translateY(-2px);
+}
+
+.selected {
+  color: var(--color--1);
+}

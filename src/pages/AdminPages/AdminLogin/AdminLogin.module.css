@@ -1,0 +1,25 @@
+.formAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formAdmin input {
+    border: 1px solid var(--color--2);
+    width: 100%;
+    
+}
+
+.p {
+    color: var(--color--4);
+    display: flex;
+    justify-content: center;
+}
+
+
+.h2 {
+    color: var(--color--4);
+    text-align: center;
+}
+

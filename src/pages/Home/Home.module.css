@@ -1,0 +1,77 @@
+.fundoCinza {
+    position: relative; /* Ajuste se necessário, dependendo do layout */
+    width: 100%;
+    height: 200px;
+    background-color: var(--color--3);
+    margin-top: -12vh;
+    z-index: -1; /* Ajuste se necessário */
+}
+
+/* Estilos para elementos dentro de .home para assegurar que eles tenham um z-index maior que o fundo */
+.home > * {
+    position: relative;
+    z-index: 20; /* Garante que esses elementos fiquem acima do fundo cinza */
+}
+
+.home {
+    height: 105vh;
+}
+
+
+/* Correção para a tag h3 */
+.h3 {
+    color: var(--color--3);
+    font-weight: initial;
+    margin-left: 10px;
+}
+
+.AgendamentoContainer {
+    margin-top: 50px;
+}
+
+.buttonPayment {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 0; /* Coloca no fundo da página */
+    left: 50%; /* Centraliza o botão horizontalmente */
+    width: 100%;
+    transform: translateX(-50%); /* Ajusta a centralização */
+    padding: 22px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    background: var(--color-rgb);   
+    color: white; /* Cor do texto */
+    border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior */
+    font-size: 1.5em; /* Tamanho do texto */
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.25); /* Sombra para dar destaque */
+    z-index: 1000; /* Índice z para garantir que fique acima dos outros elementos */
+    display: flex;
+  }
+  
+  .buttonPayment:hover {
+    background-color: #FFD700; /* Cor de fundo ao passar o mouse */
+    cursor: pointer; /* Cursor do mouse */
+  }
+  
+  /* Ícone dentro do botão */
+  .buttonPayment svg {
+    margin-left: 100px; /* Espaçamento do ícone para o texto */
+    font-size: 1.2em;
+  }
+.confirmarAgendamento {
+    position: fixed; /* Fixa o botão na tela */
+    right: 20px; /* 20 pixels da direita */
+    bottom: 80px; /* 80 pixels do fundo, ajuste conforme a altura da sua navbar */
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--color--5);
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    z-index: 999; /* Garante que fique acima de outros elementos */
+    transition: background-color 0.5s ease; /* Transição suave de cor */
+  }
+  
+  .confirmarAgendamento:hover {
+    background-color: var(--color-btn); /* Mude para a cor de sucesso ao passar o mouse */
+  }
+  
+
+
