@@ -64,7 +64,12 @@ form {
 }
 
 @media (max-width: 768px) {
-
+  .main-container {
+    max-width: 100%; /* Permite que o contêiner ocupe a largura total em dispositivos móveis */
+    border-left: none; /* Remove as linhas delimitadoras em dispositivos móveis */
+    border-right: none; /* Remove as linhas delimitadoras em dispositivos móveis */
+    padding: 0; /* Ajusta o espaçamento interno para dispositivos móveis */
+  }
 }
 
 label {
