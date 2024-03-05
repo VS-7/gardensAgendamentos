@@ -11,6 +11,7 @@ import AgendamentoCard from "../../components/Scheduler/AgendamentoCard";
 import DiaSelector from "../../components/Scheduler/DiaSelector";
 import HorarioSelector from "../../components/Scheduler/HorarioSelector";
 import { BsCheckLg, BsChevronRight, BsCartPlus } from "react-icons/bs";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const Home = () => {
   const [selectedQuadra, setSelectedQuadra] = useState(null);
@@ -114,7 +115,9 @@ const Home = () => {
                 </div>
                 <div className={styles.totalContainer}>
                   <h3 className={styles.h3}>Total a pagar: R$ {total.toFixed(2)}</h3>
-                  <button onClick={handleIrParaPagamento} className={styles.buttonPayment}>Finalizar agendamento <BsChevronRight /></button>
+                  <button onClick={handleIrParaPagamento} className={styles.buttonPayment}>Finalizar agendamento <MdArrowForwardIos /></button>
+                  
+                  
                 </div>
               </>
             )}

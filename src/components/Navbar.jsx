@@ -5,6 +5,8 @@ import { useAuthValue } from "../../context/AuthContext";
 import styles from "./Navbar.module.css";
 import { IoHomeOutline, IoLogInOutline, IoPersonAddOutline, IoCreateOutline, IoBarChartOutline, IoAddCircle, IoInformationCircleOutline, IoLogOutOutline } from 'react-icons/io5';
 import { BsCalendar, BsPersonFill } from "react-icons/bs";
+import { MdCalendarToday } from "react-icons/md";
+import { IoMdPhotos } from "react-icons/io";
 
 const Navbar = () => {
     const { user } = useAuthValue();
@@ -22,7 +24,12 @@ const Navbar = () => {
                 <ul className={styles.links_list}>
                     <li>
                         <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")}>
-                            <BsCalendar className={styles.icon}/>
+                            <MdCalendarToday className={styles.icon}/>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/publication" className={({ isActive }) => (isActive ? styles.active : "")}>
+                            <IoMdPhotos className={styles.icon}/>
                         </NavLink>
                     </li>
                     {!user && (
@@ -30,11 +37,6 @@ const Navbar = () => {
                             <li>
                                 <NavLink to="/login" className={({ isActive }) => (isActive ? styles.active : "")}>
                                     <IoLogInOutline className={styles.icon}/>
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/register" className={({ isActive }) => (isActive ? styles.active : "")}>
-                                    <IoPersonAddOutline className={styles.icon}/>
                                 </NavLink>
                             </li>
                         </>

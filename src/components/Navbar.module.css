@@ -9,7 +9,7 @@
 }
 
 .links_list li {
-    padding: 0.5em;
+    padding: -20px;
 }
 
 .links_list li a {
@@ -42,8 +42,11 @@
 .active {
     color: var(--color--2);
     background-color: var(--color--5);
-    padding: 10px;
-    border-radius: 15px;
+    padding: 6px 15px;
+    border-radius: 40px;
+    margin: -15px;
+    background-color: rgba(248, 191, 19, 0.7);
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
 
 }
 
@@ -109,13 +112,14 @@
         bottom: 0;
         left: 0;
         right: 0; /* Garante que a navbar esteja centralizada horizontalmente */
-        width: 60%; /* Define a largura da navbar */
+        width: 80%; /* Define a largura da navbar */
         min-height: 60px;
         margin: 0 auto; /* Centraliza a navbar horizontalmente */
         margin-bottom: 15px;
         box-shadow: 0 -2px 20px #e0e0e0;
-        background-color: var(--color-navbar);
-        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px); /* Efeito de desfoque */
+        border-radius: 50px;
         z-index: 10;
     }
 

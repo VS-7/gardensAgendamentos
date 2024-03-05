@@ -2,6 +2,7 @@
     text-align: center;
     max-width: 960px; /* Ajuste conforme necessário */
     margin: auto;
+    color: var(--color--4);
   }
   
   .card {
@@ -28,15 +29,16 @@
     align-items: center; /* Centraliza os elementos horizontalmente */
     justify-content: center; /* Opcional, dependendo do layout desejado */
     margin-bottom: 2em;
-    margin-top: 2vh;
+    background: linear-gradient(90deg, rgba(163,93,122,1) 0%, rgba(231,189,56,1) 94%);
+    margin-top: -10vh;
+    padding: 40px; 
+    font-weight: 500;
+    color: var(--color--4);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 20px var(--color--2);
   }
   
-  
-  .profile_photo {
-    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-bottom: 1em; /* Espaço entre a imagem e o texto abaixo dela */
-  }
   
   .profile_actions {
     display: flex;
@@ -44,11 +46,15 @@
     margin-top: 1em; /* Espaço entre os botões e o texto/nome acima */
   }
   
-  .profile_photo {
+  .profilePhoto {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 1em; /* Espaço entre a imagem e o texto abaixo dela */
     border-radius: 50%;
-    width: 90px; /* Ajuste conforme necessário */
-    height: 90px; /* Mantenha igual à largura para um círculo perfeito */
+    width: 130px; /* Ajuste conforme necessário */
+    height: 130px; /* Mantenha igual à largura para um círculo perfeito */
     object-fit: cover;
+    border: 2px solid var(--color--4);
   }
   
   

@@ -23,6 +23,7 @@ import Search from './pages/Search/Search';
 import Post from './pages/Post/Post';
 import EditPost from './pages/EditPost/EditPost';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
+import Settings from './pages/Settings/Settings';
 
 // Pages Admin
 import NavbarWrapper from './components/AdminComponents/NavbarWrapper';
@@ -30,6 +31,7 @@ import RegisterCourt from './pages/AdminPages/RegisterCourt/RegisterCourt';
 import AdminLogin from './pages/AdminPages/AdminLogin/AdminLogin';
 import AdminDashboard from './pages/AdminPages/AdminDashboard/AdminDashboard';
 import PrivateAdminRoute from './components/AdminComponents/PrivateAdminRoute';
+import Publication from './pages/Publications/Publications';
 
 
 
@@ -90,6 +92,7 @@ function App() {
               <Route path='/posts/:id' element={<Post />} />
               <Route path='/createcourt' element={<RegisterCourt />} />
               <Route path='/admin/login' element={<AdminLogin />} />
+              <Route path='/publication' element={<Publication />} />
               <Route 
                 path='/login' 
                 element={!user ? <Login /> : <Navigate to="/" />} />
@@ -111,6 +114,9 @@ function App() {
               <Route 
                 path='/payment'
                 element={user ? <PaymentPage /> : <Navigate to='/login' />} />  
+              <Route 
+                path='/dashboard/settings' 
+                element={user ? <Settings /> : <Navigate to='/login' />} />
 
               {/* Admin */}
               <Route element={<PrivateAdminRoute />}>

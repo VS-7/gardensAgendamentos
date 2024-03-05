@@ -61,12 +61,14 @@
     background-color: var(--color--4);
     color: var(--color--1);
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
   }
 
   .btnAgenda svg {
     font-size: 1.4em;
     margin-left: 5px;
   }
+  
   
   .selectedBtn {
     background-color: var(--color--5); /* Altere para a cor desejada */

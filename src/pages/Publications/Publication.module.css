@@ -1,0 +1,125 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  width: 360px;
+  
+}
+
+.btnSearch {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 12px;
+  margin-left: -10px;
+  border: 1px solid var(--color--3);
+  background-color: var(--color--1);
+  color: var(--color--4);
+  font-weight: bold;
+}
+
+  
+  
+.h3 {
+    margin-left: 10px;
+    color: var(--color--4);
+}
+
+.home_h3 {
+    border-right: 4px solid;
+    width: 16ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(27),
+    blinking 0.5s infinite step-end alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blinking {
+    30% {
+        border-color: transparent;
+    }
+}
+
+.noposts {
+    text-align: center;
+}
+
+.noposts p {
+    margin-bottom: 1.5em;
+}
+
+.noposts a {
+    padding: 10px 25px;
+}
+
+  .projects_scroll {
+    display: flex;
+    overflow-x: auto; /* Permite rolagem horizontal */
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos touch */
+    gap: 10px; /* Espaço entre os cards */
+    padding-bottom: 20px; /* Adiciona um padding para compensar a altura da scrollbar */
+    margin-bottom: -20px; /* Move a scrollbar para "fora" da visualização do usuário */
+    margin-left: 10px;
+  }
+  
+
+
+  /* Estilo para os cards de projeto dentro da rolagem horizontal */
+  .project_detail {
+    flex: 0 0 auto; /* Impede que o card mude de tamanho */
+    width: 300px; /* Define uma largura fixa para cada card */
+    height: 200px;
+  }
+  
+  /* Garanta que o contêiner .projects_scroll não tenha largura máxima restritiva */
+  .projects_scroll {
+    white-space: nowrap; /* Impede que os itens sejam quebrados em linhas novas */
+  }
+
+  /* Assegura que o contêiner da seção de projetos ocupe a largura total */
+.projects_section {
+    width: 100%;
+    overflow: hidden; /* Esconde o overflow horizontal do contêiner pai, se necessário */
+    align-items: center;
+  }
+
+@media (max-width: 768px) {
+    .home_h1 {
+        font-size: 1.5em; /* Ajustando o tamanho da fonte para telas menores */
+    }
+
+  
+
+
+     
+}
+
+@media (min-width: 768px) {
+  .search_form {
+    display: none;
+  }
+
+
+   
+}
+
+
+
+

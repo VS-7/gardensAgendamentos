@@ -37,6 +37,7 @@ const DiaSelector = ({ onDiaSelected }) => {
   return (
     <div className={styles.diaSelector}>
       <div className={styles.diasContainer}>
+        
         {diasDisponiveis.map((dia, index) => (
           <button
             key={index}

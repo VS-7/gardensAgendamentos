@@ -27,14 +27,13 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
       <div className={styles.profile_section}>
-      {user.photoURL ? (
-                                    <img src={user.photoURL} alt="Perfil" className={styles.profilePhoto} />
-                                ) : (
-                                    // Se não houver foto, mostra o ícone padrão
-                                    <BsPersonFill className={styles.icon}/>
-                                )}
+        {user.photoURL ? (
+                                      <img src={user.photoURL} alt="Perfil" className={styles.profilePhoto} />
+                                  ) : (
+                                      // Se não houver foto, mostra o ícone padrão
+                                      <BsPersonFill className={styles.icon}/>
+                                  )}
         {user.displayName}
-       <span>{user.email}</span>
         <div className={styles.profile_actions}>
           <Link to="/edit-profile" className={styles.btn}>Editar Perfil</Link>
           <Link to="/dashboard/settings" className={styles.btnConfig}><FaGear /></Link>

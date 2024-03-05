@@ -1,7 +1,12 @@
+
 .login {
     text-align: center;
     color: var(--color--4);
-    background-color: var(--color-rgb);
+    background: var(--color-rgb);
+    padding-bottom: 500px;
+    padding-top: 100px;
+    margin-top: -10vh;
+    margin-bottom: -12vh;
 }
 
 .login p {
@@ -40,7 +45,7 @@
 
 .login img {
     width: 200px;
-    box-shadow: 0 10px 20px var(--color--2);
+    box-shadow: 0 10px 20px var(--color-rgb);
     border: none;
     border-radius: 100%;
 }
