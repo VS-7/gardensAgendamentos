@@ -75,6 +75,7 @@ function App() {
     {/*} <button onClick={toggleTheme} style={{ position: 'fixed', zIndex: 1000, top: '15px', right: '50px', background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>
         {theme === 'dark' ? <FiSun size={24} /> : <FiMoon size={24} />}
   </button> */} 
+      <div className='main-container'>
       <AuthProvider value={ { user }}>
         <BrowserRouter>
         <div className='navbarContainer'>
@@ -120,6 +121,7 @@ function App() {
           </div>
         </BrowserRouter>
       </AuthProvider>
+      </div>
     </div>
   )
 }

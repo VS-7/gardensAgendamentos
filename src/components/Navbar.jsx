@@ -12,6 +12,12 @@ const Navbar = () => {
 
     return (
         <>
+        {/* 
+        <div className={styles.headerContent}>
+                <NavLink to="/" className={styles.brand}>
+                    <img src="../../public/logo.svg" alt="" />
+                </NavLink>
+            </div> */}
             <nav className={styles.navbar}>
                 <ul className={styles.links_list}>
                     <li>

@@ -19,6 +19,15 @@
 
 
 
+.main-container {
+  max-width: 800px; /* Ajuste conforme necessário para sua plataforma */
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+  border-left: 1px solid var(--color--2); /* Linha delimitando à esquerda */
+  border-right: 1px solid var(--color--2); /* Linha delimitando à direita */
+  padding: 10px; /* Espaçamento interno para não colar o conteúdo nas bordas */
+  background-color: var(--color--1); /* Cor de fundo conforme o tema */
+}
+
 body {
   background-color: var(--color--1);
   color: var(--color--6);

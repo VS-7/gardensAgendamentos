@@ -1,11 +1,47 @@
 .login {
     text-align: center;
+    color: var(--color--4);
+    background-color: var(--color-rgb);
 }
 
 .login p {
-    color: var(--color--6);
+    color: var(--color--4);
+    margin-top: -20px;
 }
 
-.login button {
-    width: 100%;
+.btnLogin{
+    border: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    border-radius: 60px;
+    background-color: var(--color--4);
+    color: var(--color--1);
 }
+
+.btnLogin.waiting {
+    background-color: var(--color--4);
+}
+
+.btnLoginWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.login svg {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-right: 10px;
+    
+}
+
+.login img {
+    width: 200px;
+    box-shadow: 0 10px 20px var(--color--2);
+    border: none;
+    border-radius: 100%;
+}
+
