@@ -15,18 +15,20 @@ const Settings = ( ) => {
     return (
         <>
         <div className={styles.settings}>
-         <h2> Configurações da conta</h2>
+          <button className={styles.adicionarPayment}>Configurações</button>
         </div>
-        <Link to="/resetPassword" className={styles.password}>Redefinir senha <IoIosArrowForward size="1em" /></Link>
-        <div className={styles.button}>{user && (
-                    
-                    
-                    <a onClick={logout} className={styles.logout}>
-                        Desconectar {user.displayName} <IoIosArrowForward size="1em" />
-                    </a>
-                )}</div>
-        
-                
+
+        <div className={styles.buttons}>
+            <Link to="/resetPassword" className={styles.button}>Redefinir senha <IoIosArrowForward size="1em" /></Link>
+            <div className={styles.buttons}>{user && (
+                        
+                        
+                        <a onClick={logout} className={styles.button}>
+                            Desconectar {user.displayName} <IoIosArrowForward size="1em" />
+                        </a>
+                    )}</div>
+            
+        </div>        
 
         </>
     );

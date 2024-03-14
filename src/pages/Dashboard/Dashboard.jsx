@@ -33,16 +33,17 @@ const Dashboard = () => {
                                       // Se não houver foto, mostra o ícone padrão
                                       <BsPersonFill className={styles.icon}/>
                                   )}
-        {user.displayName}
+        <h2>{user.displayName}</h2>
         <div className={styles.profile_actions}>
           <Link to="/edit-profile" className={styles.btn}>Editar Perfil</Link>
           <Link to="/dashboard/settings" className={styles.btnConfig}><FaGear /></Link>
         </div>
       </div>
-      <h3>Suas Publicações</h3>
+      <h3></h3>
       <div className={styles.tab_buttons}>
-        <button className={`${styles.tab_button} ${activeTab === "posts" && styles.active}`} onClick={() => handleTabChange("posts")}><BsFillGrid3X3GapFill className={styles.icon}/></button>
-        <button className={`${styles.tab_button} ${activeTab === "projects" && styles.active}`} onClick={() => handleTabChange("project")}><FaProjectDiagram className={styles.icon}/></button>
+        <button className={`${styles.tab_button} ${activeTab === "reservas" && styles.active}`} onClick={() => handleTabChange("posts")}>Reservas</button>
+        <button className={`${styles.tab_button} ${activeTab === "posts" && styles.active}`} onClick={() => handleTabChange("posts")}>Publicações</button>
+        <button className={`${styles.tab_button} ${activeTab === "torneios" && styles.active}`} onClick={() => handleTabChange("posts")}>Torneios</button>
       </div>
       <div className={styles.posts_grid}>
         {loading ? (
@@ -70,9 +71,7 @@ const Dashboard = () => {
         ) : (
           <div className={styles.noposts}>
             <p>Não foram encontradas publicações</p>
-            <Link to={`/${activeTab}/create`} className="btn">
-              Criar publicação
-            </Link>
+
           </div>
         )}
       </div>

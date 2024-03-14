@@ -1,50 +1,71 @@
 .create_post {
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color--5);
+  margin-bottom: 20px;
+  margin-top: -30px;
 }
 
-.create_post h2 {
-    font-size: 2.2em;
+.form {
+width: 100%;
 }
 
-.create_post p{
-    color: var(--color--6);
-    margin-bottom: 2em;
+.create_post textarea {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: large;
 }
 
-.optionalText {
-  font-size: 12px; /* Tamanho de fonte pequeno */
-  font-style: italic; /* Estilo de fonte itálico para destacar */
-  color: #888; /* Cor de texto cinza para destacar */
+.create_post textarea {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  padding-bottom: 300px;
+  margin-bottom: 10px;
+  resize: none; 
+  font-size: large;
 }
 
-.create_post button {
-    width: 100%;
+.create_post .iconButton {
+  background-color: transparent;
+  border: none;
+  color: var(--color--4);
+  cursor: pointer;
+  font-size: 20px; /* Tamanho dos ícones */
+  margin-right: 10px;
 }
 
-.fileInput{
-    display: block;
-    margin-top: 10px;
-    cursor: pointer;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
+.create_post .iconButton:hover {
+  color: var(--color--4) /* Cor dos ícones ao passar o mouse */
+}
 
+.create_post input[type="text"],
+.create_post input[type="file"] {
+  color: var(--color--2);
+  width: 100%;
+  border: none;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
 
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--color--3);
+  color: var(--color--1);
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
 
-
-
-
-@media (max-width: 768px) {
-    .create_post {
-        max-width: 100%; /* Reduzindo a largura máxima do componente em telas menores */
-    }
-
-    .create_post h2 {
-        font-size: 1.8em; /* Ajustando o tamanho da fonte do título para telas menores */
-    }
-
-    .optionalText {
-        font-size: 10px; /* Ajustando o tamanho da fonte para telas menores */
-    }
+.button:hover {
+  background-color: #00cb87;
 }

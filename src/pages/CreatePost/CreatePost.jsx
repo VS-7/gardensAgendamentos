@@ -1,47 +1,69 @@
 import styles from "./CreatePost.module.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuthValue } from "../../../context/AuthContext";
-import { useInsertDocument } from "../../hooks/useInsertDocument";
-import { useUploadDocument } from "../../hooks/useUploadDocument"; // import the function for uploading images
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuthValue } from '../../../context/AuthContext';
+import { useInsertDocument } from '../../hooks/useInsertDocument';
+import { useUploadDocument } from '../../hooks/useUploadDocument';
+import { FiImage, FiLink, FiTag } from 'react-icons/fi';
+import { BiFontFamily } from "react-icons/bi";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
-  const [image, setImage] = useState(null); // change to null
+  const [image, setImage] = useState(null);
   const [body, setBody] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState("");
   const [formError, setFormError] = useState("");
 
   const { user } = useAuthValue();
-  const { insertDocument, response } = useInsertDocument("posts");
   const navigate = useNavigate();
+  const { insertDocument, response } = useInsertDocument("posts");
+
+  const [showTitleInput, setShowTitleInput] = useState(true);
+  const [showImageInput, setShowImageInput] = useState(false);
+  const [showTagsInput, setShowTagsInput] = useState(false);
+
+  const toggleInputVisibility = (inputType) => {
+    switch (inputType) {
+      case "title":
+        setShowTitleInput(!showTitleInput);
+        break;
+      case "image":
+        setShowImageInput(!showImageInput);
+        break;
+      case "tags":
+        setShowTagsInput(!showTagsInput);
+        break;
+      default:
+        break;
+    }
+  };
 
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
+    if (e.target.files.length > 0) {
+      const file = e.target.files[0];
+      setImage(file);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError("");
 
-    // Validate image
-    if (!image) {
-      setFormError("Por favor, selecione uma imagem.");
+    if (!title || !body) {
+      setFormError("Título e corpo da publicação são obrigatórios.");
       return;
     }
 
-    // Create tags array
-    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+    const tagsArray = tags.split(',').map((tag) => tag.trim().toLowerCase()).filter(tag => tag !== "");
 
-    // Upload image to Firebase Storage
     try {
-      const imageUrl = await useUploadDocument(image, "posts"); // assuming "posts" is your storage path
-      insertDocument({
+      const imageUrl = await useUploadDocument(image, "posts");
+      await insertDocument({
         title,
         image: imageUrl,
         body,
-        tagsArray,
+        tags: tagsArray,
+        links: linksArray,
         uid: user.uid,
         createdBy: user.displayName,
       });
@@ -51,65 +73,56 @@ const CreatePost = () => {
     }
   };
 
-
   return (
     <div className={styles.create_post}>
-        <h2>Criar post</h2>
-        <p>Escreva algo, e compartilhe seu conhecimeto!</p>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Titulo:</span>
-            <input 
-              type="text" 
-              name="title" 
-              required 
-              placeholder="Pense em um bom título..."
-              onChange={(e) => setTitle(e.target.value)} 
-              value={title}/>
-          </label>
-          <label>
-            <span className={styles.optionalText}>(opcional)</span>
-            <span>Imagem:</span>
-            <input 
-              className={styles.fileInput}
-              type="file"
-              name="image"
-              accept="image/*"
-              onChange={handleImageChange}
-            />
-          </label>
-          <label>
-            <span>Conteúdo:</span>
-            <textarea 
-              name="body" 
-              required 
-              placeholder="Insira o conteúdo do post"
-              onChange={(e) => setBody(e.target.value)}
-              value={body}
-            ></textarea>
-          </label>
-          <label>
-            <span>Tags:</span>
-            <input 
-              type="text" 
-              name="tags" 
-              required 
-              placeholder="Insira as tags separadas por vírgula"
-              onChange={(e) => setTags(e.target.value)} 
-              value={tags}/>
-          </label>
-          {!response.loading && <button className="btn">Criar post!</button>}
-          {response.loading && (
-          <button className="btn" disabled>
-            Aguarde.. .
-          </button>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        {showTitleInput && (
+          <input
+            type="text"
+            required
+            placeholder="Título da publicação"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            className={styles.input}
+          />
         )}
-        {(response.error || formError) && (
-          <p className="error">{response.error || formError}</p>
-        )}
-        </form>
-    </div>
-  )
-}
+        <textarea
+          required
+          placeholder="O que anda pesquisando?"
+          onChange={(e) => setBody(e.target.value)}
+          value={body}
+          className={styles.textarea}
+        ></textarea>
 
-export default CreatePost
+        <div className={styles.buttons}>
+          <button type="button" onClick={() => toggleInputVisibility("title")} className={styles.iconButton}><BiFontFamily /></button>
+          <button type="button" onClick={() => toggleInputVisibility("image")} className={styles.iconButton}><FiImage /></button>
+          <button type="button" onClick={() => toggleInputVisibility("tags")} className={styles.iconButton}><FiTag /></button>
+        </div>
+
+        {showImageInput && (
+          <input
+            type="file"
+            className={styles.fileInput}
+            accept="image/*"
+            onChange={handleImageChange}
+          />
+        )}
+        {showTagsInput && (
+          <input
+            type="text"
+            placeholder="Insira as tags separadas por vírgula"
+            onChange={(e) => setTags(e.target.value)}
+            value={tags}
+          />
+        )}
+
+        {!response.loading && <button type="submit" className={styles.button}>Publicar</button>}
+        {response.loading && <button className={styles.button} disabled>Publicando...</button>}
+        {(response.error || formError) && <p className={styles.error}>{response.error || formError}</p>}
+      </form>
+    </div>
+  );
+};
+
+export default CreatePost;

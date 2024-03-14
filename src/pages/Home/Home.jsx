@@ -18,6 +18,7 @@ const Home = () => {
   const [selectedDia, setSelectedDia] = useState(null);
   const [selectedHorario, setSelectedHorario] = useState("");
   const [agendamentos, setAgendamentos] = useState([]);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [total, setTotal] = useState(0); // Estado para armazenar o total
   const { user } = useAuthValue();
 
@@ -64,6 +65,11 @@ const Home = () => {
   const handleIrParaPagamento = () => {
     navigate('/payment', { state: { total } });
   };
+
+  const toggleMenu = () => {
+    setIsMenuVisible(!isMenuVisible);
+  };
+
 
   if (loadingQuadras) return <div>Carregando quadras...</div>;
   if (error) return <div>Erro ao buscar quadras.</div>;
